@@ -1,0 +1,30 @@
+<p>view-team works!</p>
+
+<div align = "center">
+    <h2>Get By Id</h2>
+    Enter the Team Id:<input [(ngModel)]="searchId" type="number" placeholder="searchTeamId">
+    <button (click)="getTeamById()">Search</button>
+    <div *ngIf="teamById">
+        <p><strong>Team Id:</strong>{{teamById.teamId}}</p>
+        <p><strong>Team Name:</strong>{{teamById.teamName}}</p>
+        <p><strong>Hackathon name:</strong>{{teamById.hackathon | json}}</p>
+ 
+    </div>
+<hr>
+<div>
+    <h3>List All Teams</h3>
+    <table border="1">
+        <tr>
+            <td>teamId:</td>
+            <td>teamName :</td>
+            <td>Hackathon name:</td>
+        </tr>
+        <tr *ngFor="let team of teams">
+            <td>{{team.teamId}}</td>
+            <td>{{team.teamName}}</td>
+            <td>{{team.hackathon| json}}</td>
+            
+        </tr>
+    </table>
+</div>
+</div>

@@ -1,0 +1,29 @@
+<p>view-hackathon works!</p>
+<div align = "center">
+    <h2>Get By Id</h2>
+    Enter the Hackathon Id:<input [(ngModel)]="searchId" type="number" placeholder="searchHackathonId">
+    <button (click)="getHackathonById()">Search</button>
+    <div *ngIf="hackathonById">
+        <p><strong>Hackathon Id:</strong>{{hackathonById.hackathonId}}</p>
+        <p><strong>Hackathon Name:</strong>{{hackathonById.hackathonName}}</p>
+        <p><strong>Hackathon Date:</strong>{{hackathonById.date}}</p>
+ 
+    </div>
+<hr>
+<div>
+    <h3>List All Hackathons</h3>
+    <table border="1">
+        <tr>
+            <td>hackathonId:</td>
+            <td>hackathonName :</td>
+            <td>date:</td>
+        </tr>
+        <tr *ngFor="let hackathon of hackathons">
+            <td>{{hackathon.hackathonId}}</td>
+            <td>{{hackathon.hackathonName}}</td>
+            <td>{{hackathon.date}}</td>
+            
+        </tr>
+    </table>
+</div>
+</div>

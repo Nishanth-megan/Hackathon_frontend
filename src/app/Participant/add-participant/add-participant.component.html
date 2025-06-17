@@ -1,0 +1,26 @@
+<p>add-participant works!</p>
+<form (ngSubmit) = "addParticipant()">
+    <h2>Participant Form</h2>
+    <table>
+        <tr>
+        <td><label>Participant Name:</label></td>
+        <td><input [(ngModel)]="newParticipant.participantName" type="text" name="participantName" required ></td>
+        </tr>
+        <tr>
+            <td><label>Email:</label></td>
+            <td><input [(ngModel)]="newParticipant.email" type="text" name="email" required ></td>
+            </tr>
+        <tr>
+            <td><label>Team Name: </label></td>
+            <td>
+                <select name="team" id="team" [(ngModel)]="newParticipant.team">
+                    <option *ngFor="let team of teams" [ngValue]="team">
+                        {{team.teamName}}
+                    </option>
+                </select>
+            </td>
+       </tr>
+
+            <td><button type="submit">Submit</button></td>
+    </table>
+</form>

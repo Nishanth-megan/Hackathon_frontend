@@ -1,0 +1,22 @@
+<p>add-team works!</p>
+<form (ngSubmit) = "addTeam()">
+    <h2>Team Form</h2>
+    <table>
+        <tr>
+        <td><label>Team Name:</label></td>
+        <td><input [(ngModel)]="newTeam.teamName" type="text" name="teamName" required ></td>
+        </tr>
+        <tr>
+            <td><label>Hackathon Name: </label></td>
+            <td>
+                <select name="hackathon" id="hackathon" [(ngModel)]="newTeam.hackathon">
+                    <option *ngFor="let hackathon of hackathons" [ngValue]="hackathon">
+                        {{hackathon.hackathonName}}
+                    </option>
+                </select>
+            </td>
+       </tr>
+
+            <td><button type="submit">Submit</button></td>
+    </table>
+</form>

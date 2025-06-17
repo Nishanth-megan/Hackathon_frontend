@@ -1,0 +1,16 @@
+<p>add-hackathon works!</p>
+<form (ngSubmit) = "addHackathon()">
+    <h2>Hackathon Form</h2>
+    <table>
+        <tr>
+        <td><label>Hackathon Name:</label></td>
+        <td><input [(ngModel)]="newHackathon.hackathonName" type="text" name="hackathonName" required ></td>
+        </tr>
+        <tr>
+            <td><label>Date:</label></td>
+            <td><input [(ngModel)] ="newHackathon.date" type="date" name="date" required ></td>
+            </tr>
+
+            <td><button type="submit">Submit</button></td>
+    </table>
+</form>
